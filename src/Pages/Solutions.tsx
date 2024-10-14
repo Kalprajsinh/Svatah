@@ -16,8 +16,8 @@ function Solutions() {
         <div className="max-w-screen-xl mx-auto py-20">
           <h2 className="text-4xl font-bold mb-4 text-center text-white">Discover Your Solutions</h2>
           <div className='w-full mt-5'>
-          <p className="text-lg text-white">
-      Combining Vertical Flow Immunoassay, Lateral Flow Immunoassay and Electrochemical Biosensor/Wearables technologies enables the development of diagnostic solutions that prioritize affordability, accessibility, and rapid results. These innovative approaches empower healthcare professionals to deliver timely interventions and improve patient outcomes, while also addressing the challenges of healthcare access and resource limitations in diverse settings worldwide.
+          <p className="text-lg text-gray-300 p-5 text-center">
+      Combining Vertical Flow Immunoassay, Lateral Flow Immunoassay and Electrochemical Biosensor/Wearables technologies enables the development of diagnostic solutions that prioritize affordability, accessibility, and rapid results. These innovative approaches empower healthcare professionals to deliver timely interventions and improve outcomes, while addressing the challenges of healthcare access and resource limitations in diverse settings worldwide.
       </p>
           </div>
           

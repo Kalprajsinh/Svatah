@@ -20,8 +20,15 @@ function Navbar() {
   return (
     <>
       <nav className={`bg-black pt-10 ${location.pathname === "/" ? "bg-opacity-70" : "bg-opacity-40"}`}>
-        <div className="max-w-screen-xl flex flex-wrap items-center lg:justify-center justify-end mx-auto">
-          {/* <img src="Logo.png" className="h-16" alt="Logo" /> */}
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+          <div className="flex justify-center items-center">
+          <img src="Logo2.png" className="h-14" alt="Logo" />
+          <div>
+          <p className="text-gray-400 text-xl">SVATAH</p>
+          <p className="text-blue-500 text-xl">BIOINNOVATIONS</p>
+          </div>
+          </div>
+          
 
           <button
             onClick={handleToggle}

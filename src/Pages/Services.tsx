@@ -131,7 +131,7 @@ function Services() {
           >
             Our Services
           </h2>
-          <h1 ref={sectionTitleRef} className="text-xl font-bold mb-4">
+          <h1 ref={sectionTitleRef} className="text-xl font-bold mb-4 text-gray-300">
             Your One-Stop Service for Affordable, Accessible, and Accurate
             Diagnostic Kit/Devices Development
           </h1>
@@ -411,7 +411,7 @@ function Services() {
       
       <section className="py-16">
         <div className="max-w-screen-xl mx-auto px-6 text-center">
-          <p className="text-lg text-white mb-8">
+          <p className="text-lg text-gray-300 mb-8">
             With our contract and consulting services, centered around VFI,
             LFIA, and electrochemical biosensor technologies, we are committed
             to supporting clients in developing and commercializing affordable,

@@ -194,19 +194,19 @@ function AboutUs() {
 
       <section
         ref={storyRef}
-        className="w-full py-20 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center"
+        className="w-full pt-20 md:py-20 py-0 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center"
       >
         
         <div className="md:w-1/2 text-white pl-0 md:pl-12">
           <h2 className="text-4xl font-bold mb-6">Our Story</h2>
-          <p ref={el => textRefs.current[0] = el} className="text-lg mb-4">
+          <p ref={el => textRefs.current[0] = el} className="text-lg mb-4 text-gray-300">
             Our journey began with a simple, yet profound dream shared by every human being: the dream of accessible and equitable healthcare. We started as a small initiative that has blossomed into a global movement, touching countless lives across the world.
           </p>
-          <p ref={el => textRefs.current[1] = el} className="text-lg">
+          <p ref={el => textRefs.current[1] = el} className="text-lg text-gray-300">
             Driven by a relentless pursuit of innovation, our team has continually pushed the boundaries of what is possible in point-of-care diagnostics. From developing cutting-edge technologies to creating affordable diagnostic tools, our efforts have been fueled by a commitment to making healthcare accessible to everyone, everywhere.
           </p>
         </div>
-        <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
+        <div className="md:w-1/2 flex justify-center md:mb-0 mt-5 md:mt-0">
           <img
             src="/Aboutus1.png"
             alt="Our Story"
@@ -216,21 +216,21 @@ function AboutUs() {
       </section>
 
       <section
-        className="w-full py-20 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center"
+        className="w-full md:py-20 py-0 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center"
       >
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <img
             src="/Aboutus2.png"
             alt="Our Story"
-            className="rounded-lg shadow-lg w-full h-auto max-w-md object-cover"
+            className="rounded-lg shadow-lg w-full h-auto max-w-md object-cover hidden md:block"
           />
         </div>
         <div className="md:w-1/2 text-white pl-0 md:pl-12">
           <h2 className="text-4xl font-bold mb-6">Our Mission: Creating affordable diagnostic tools</h2>
-          <p ref={el => text2Refs.current[0] = el} className="text-lg mb-4">
+          <p ref={el => text2Refs.current[0] = el} className="text-lg mb-4 text-gray-300">
             Our journey began with a simple, yet profound dream shared by every human being: the dream of accessible and equitable healthcare. We started as a small initiative that has blossomed into a global movement, touching countless lives across the world.
           </p>
-          <p ref={el => text2Refs.current[1] = el} className="text-lg">
+          <p ref={el => text2Refs.current[1] = el} className="text-lg text-gray-300">
             Driven by a relentless pursuit of innovation, our team has continually pushed the boundaries of what is possible in point-of-care diagnostics. From developing cutting-edge technologies to creating affordable diagnostic tools, our efforts have been fueled by a commitment to making healthcare accessible to everyone, everywhere.
           </p>
         </div>
@@ -238,7 +238,7 @@ function AboutUs() {
 
       <section
         ref={teamSectionRef}
-        className="bg-gray-90 0 w-full py-20 px-6 md:px-12 lg:px-24"
+        className="bg-gray-90 0 w-full py-6 md:py-20 px-6 md:px-12 lg:px-24"
       >
         <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -278,18 +278,18 @@ function AboutUs() {
 
       <section
         ref={valuesRef}
-        className="w-full py-20 px-6 md:px-12 lg:px-24 flex justify-center items-center"
+        className="w-full md:py-20 py-0 px-6 md:px-12 lg:px-24 flex justify-center items-center"
       >
         <div className="md:w-2/3">
           <h2 className="text-4xl font-bold text-white mb-8">Our Values</h2>
           <ul className="space-y-6">
-            <li className="text-lg text-white">
+            <li className="text-lg text-gray-300">
               <strong>Innovation:</strong> We innovate continuously to provide cost-effective and rapid point-of-care solutions.
             </li>
-            <li className="text-lg text-white">
+            <li className="text-lg text-gray-300">
               <strong>Reach:</strong> We aim to expand our reach to the most vulnerable and hard-to-reach populations.
             </li>
-            <li className="text-lg text-white">
+            <li className="text-lg text-gray-300">
               <strong>Partnership:</strong> We foster partnerships and create ecosystems that enhance our ability to respond swiftly and effectively to emerging health threats.
             </li>
           </ul>
@@ -302,7 +302,7 @@ function AboutUs() {
         className="bg-gray-90 0 w-full py-20"
       >
         <h2 className="text-4xl font-bold text-white mb-12 text-center">What Our Customers Say</h2>
-        <p className="text-xl font-bold text-white mb-12 text-center">See how Svatah customers are use product and getting incredible results.</p>
+        <p className="text-xl font-bold text-gray-300 mb-12 text-center">See how Svatah customers are use product and getting incredible results.</p>
         <div className="flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (

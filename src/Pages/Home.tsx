@@ -103,7 +103,7 @@ function Home() {
       >
         <source src="/bg2.mp4" type="video/mp4" />
       </video>
-<section className="w-full h-[305vh] relative overflow-hidden bg-black bg-opacity-70">
+<section className="w-full md:h-[305vh] h-[390vh] relative overflow-hidden bg-black bg-opacity-70">
       <div className="relative z-10 flex flex-col items-center h-screen justify-center">
         <h1 id='text1' className="text-white text-center text-4xl md:text-6xl font-bold">
           Svatah Bioinnovations
@@ -128,7 +128,7 @@ function Home() {
 
     <section className="w-full h-full flex justify-center items-center relative">       
         <div className="flex flex-col items-center">         
-            <h1 ref={text3Ref} id='text3' className="text-white text-center text-3xl font-bold mt-10">         
+            <h1 ref={text3Ref} id='text3' className="text-white text-center text-3xl font-bold md:mt-10 mt-0">         
                 Innovating the Future of Diagnostics for Better Patient Outcomes.         
             </h1> 
             <div className="h-20"></div>         
@@ -173,7 +173,7 @@ function Home() {
     </section>  
 
     <section
-        className="bg-gray-90 0 w-full px-6 md:px-12 lg:px-24"
+        className="bg-gray-90 0 w-full px-6 md:px-12 lg:px-24 mt-40 md:mt-0"
       >
         <h2 className="text-4xl font-bold text-white mb-12 text-center">Svatah By the Numbers</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

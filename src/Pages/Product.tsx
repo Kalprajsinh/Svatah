@@ -75,7 +75,7 @@ function Product() {
           >
             Discover Our Innovative Products
           </h2>
-          <p className="text-lg text-white leading-relaxed">
+          <p className="text-lg text-gray-300 leading-relaxed">
             Lateral Flow Immunoassay and Electrochemical Biosensor/Wearables technologies enable the development of diagnostic solutions that prioritize affordability, accessibility, and rapid results. These innovative approaches empower healthcare professionals to deliver timely interventions and improve patient outcomes, while addressing challenges of healthcare access and resource limitations globally.
           </p>
         </div>
@@ -89,7 +89,7 @@ function Product() {
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <div>
             <h3 className="text-2xl font-semibold text-white mb-2">Vertical Flow Immunoassay (VFI)</h3>
-            <p className="text-white mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
+            <p className="text-gray-300 mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
           </div>
         </div>
         <div className="w-full md:w-1/2 h-1/2 md:h-64 flex justify-center items-center mt-6 md:mt-0">
@@ -105,7 +105,7 @@ function Product() {
         <div className="w-full md:w-1/2 flex justify-center items-center mt-6 md:mt-0 mx-5">
           <div>
           <h3 className="text-2xl font-semibold text-white mb-2">Lateral Flow Immunoassay (LFI)</h3>
-            <p className="text-white mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
+            <p className="text-gray-300 mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
           </div>
         </div>
         <div className="w-full md:w-1/2 h-1/2 justify-center items-center md:hidden block">
@@ -117,7 +117,7 @@ function Product() {
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <div>
             <h3 className="text-2xl font-semibold text-white mb-2">Electro-chemical Biosensor Technology</h3>
-            <p className="text-white mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
+            <p className="text-gray-300 mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
           </div>
         </div>
         <div className="w-full md:w-1/2 h-1/2 md:h-64 flex justify-center items-center mt-6 md:mt-0">
@@ -132,10 +132,10 @@ function Product() {
         <div className="w-full md:w-1/2 flex justify-center items-center mt-6 md:mt-0 mx-5">
           <div>
           <h3 className="text-2xl font-semibold text-white mb-2">Diagnostic Components</h3>
-            <p className="text-white mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
+            <p className="text-gray-300 mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 h-1/2 justify-center items-center md:hidden block">
+        <div className="w-full md:w-1/2 h-1/2 md:h-64 flex justify-center items-center mt-6 md:mt-0">
         <img src="solution1.png" alt="Vertical Flow Immunoassay" className="w-auto h-64 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300" />
         </div>
       </li>
