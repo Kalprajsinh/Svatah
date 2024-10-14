@@ -19,7 +19,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-black bg-opacity-70 pt-10">
+      <nav className={`bg-black pt-10 ${location.pathname === "/" ? "bg-opacity-70" : "bg-opacity-40"}`}>
         <div className="max-w-screen-xl flex flex-wrap items-center lg:justify-center justify-end mx-auto">
           {/* <img src="Logo.png" className="h-16" alt="Logo" /> */}
 

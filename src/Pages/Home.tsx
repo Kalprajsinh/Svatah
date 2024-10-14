@@ -1,96 +1,20 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { cn } from "@/lib/utils";
-import Marquee from "../components/ui/marquee";
-import { useGSAP } from "@gsap/react";
 import TypingAnimation from "@/components/ui/typing-animation";
 import ShinyButton from "@/components/ui/shiny-button";
-import { FaArrowRight, FaArrowUpRightDots, FaFontAwesome } from "react-icons/fa6";
- 
-const reviews = [
-  {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
-  },
-  {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
-  },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
-  },
-];
- 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
- 
-const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
-}: {
-  img: string;
-  name: string;
-  username: string;
-  body: string;
-}) => {
-  return (
-    <figure
-      className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // dark styles
-        "border-gray-50/[.1] bg-gray-900 hover:bg-gray-950",
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium text-gray-400">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm text-gray-300">{body}</blockquote>
-    </figure>
-  );
-};
+import { FaArrowRight } from "react-icons/fa6";
+import NumberTicker from "@/components/ui/number-ticker";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
-  const text3Ref = useRef(null);
-  const featuresRef = useRef(null);
-  const div1ref = useRef(null);
-  const div2ref = useRef(null);
-  const div3ref = useRef(null);
+  const text3Ref = useRef<HTMLDivElement | null>(null);
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+  const div1ref = useRef<HTMLDivElement | null>(null);
+  const div2ref = useRef<HTMLDivElement | null>(null);
+  const div3ref = useRef<HTMLDivElement | null>(null);
+  const div4ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -126,7 +50,7 @@ function Home() {
     );
 
     gsap.fromTo(
-      [div1ref.current, div2ref.current, div3ref.current],
+      [div1ref.current, div2ref.current, div3ref.current,div4ref.current],
       { opacity: 0, y: 50 },
       {
         opacity: 1,
@@ -134,8 +58,8 @@ function Home() {
         duration: 1, // Adjust duration for each element
         stagger: 0.7, // Stagger time in seconds
         scrollTrigger: {
-          trigger: text3Ref.current,
-          start: 'top 80%', // When the top of the element hits 80% of the viewport height
+          trigger: [div1ref.current, div2ref.current, div3ref.current,div4ref.current],
+          start: 'top 90%', 
           toggleActions: 'play none none reverse',
         },
       }
@@ -171,7 +95,7 @@ function Home() {
 
   return (
     <>
-    <div className="w-full h-[320vh]">
+    <div className="w-full">
       <video
         autoPlay
         muted
@@ -180,7 +104,7 @@ function Home() {
       >
         <source src="/bg2.mp4" type="video/mp4" />
       </video>
-<section className="w-full h-[320vh] relative overflow-hidden bg-black bg-opacity-70">
+<section className="w-full h-[305vh] relative overflow-hidden bg-black bg-opacity-70">
       <div className="relative z-10 flex flex-col items-center h-screen justify-center">
         <h1 id='text1' className="text-white text-center text-4xl md:text-6xl font-bold">
           Svatah Bioinnovations
@@ -249,18 +173,44 @@ function Home() {
         </div>     
     </section>  
 
-    <section className="w-full py-20" ref={featuresRef}>
+    <section
+        className="bg-gray-90 0 w-full px-6 md:px-12 lg:px-24"
+      >
+        <h2 className="text-4xl font-bold text-white mb-12 text-center">Svatah By the Numbers</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Team Member 1 */}
+          <div className="team-member rounded-lg shadow-lg text-center">
+            <h3 className="text-5xl font-semibold text-white"><NumberTicker className="text-5xl font-semibold text-white" value={5} /></h3>
+            <p className="text-gray-400">Year Experience</p>
+          </div>
+          {/* Team Member 2 */}
+          <div className="team-member rounded-lg shadow-lg text-center">
+            <h3 className="text-5xl font-semibold text-white"><NumberTicker className="text-5xl font-semibold text-white" value={23} /></h3>
+            <p className="text-gray-400">Projects completed</p>
+          </div>
+          <div className="team-member rounded-lg shadow-lg text-center">
+            <h3 className="text-5xl font-semibold text-white"><NumberTicker className="text-5xl font-semibold text-white" value={800} />+</h3>
+            <p className="text-gray-400">positive Reviews</p>
+          </div>
+          <div className="team-member rounded-lg shadow-lg text-center">
+            <h3 className="text-5xl font-semibold text-white"><NumberTicker className="text-5xl font-semibold text-white" value={230} />K</h3>
+            <p className="text-gray-400">Students</p>
+          </div>
+        </div>
+      </section>
+
+
+    <section className="w-full pb-20 pt-28" ref={featuresRef}>
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center text-white mb-16">
+            <h2 ref={div4ref} className="text-4xl font-bold text-center text-white mb-16">
               Our Innovative Features
             </h2>
             <div className="relative">
-
               {/* Text Sections */}
               <div className="space-y-16">
                 {/* Feature 1 */}
-                <div className="feature-section flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/2 feature-text text-white text-center">
+                <div className="feature-section flex flex-col md:flex-row items-center justify-center">
+                  <div className="md:w-1/3 feature-text text-white text-center">
                     <h3 className="text-2xl font-semibold mb-4">Advanced Diagnostics</h3>
                     <p>
                       Our advanced diagnostic tools leverage the latest in biosensor technology to provide
@@ -271,8 +221,8 @@ function Home() {
                 </div>
 
                 {/* Feature 2 */}
-                <div className="feature-section flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/2 feature-text text-white order-2 md:order-1 text-center">
+                <div className="feature-section flex flex-col md:flex-row items-center justify-center">
+                  <div className="md:w-1/3 feature-text text-white order-2 md:order-1 text-center">
                     <h3 className="text-2xl font-semibold mb-4">User-Friendly Interface</h3>
                     <p>
                       Our diagnostic devices come with intuitive interfaces, making them easy to use for
@@ -283,8 +233,8 @@ function Home() {
                 </div>
 
                 {/* Feature 3 */}
-                <div className="feature-section flex flex-col md:flex-row items-center">
-                  <div className="md:w-1/2 feature-text text-white text-center">
+                <div className="feature-section flex-col md:flex-row items-center flex justify-center">
+                  <div className="md:w-1/3 feature-text text-white text-center">
                     <h3 className="text-2xl font-semibold mb-4">Scalable Solutions</h3>
                     <p>
                       Designed to be scalable, our solutions can adapt to varying healthcare settings,
@@ -300,24 +250,7 @@ function Home() {
           </div>
         </section>     
 </div>
-
-    
-      <div className="flex h-[1200px] w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-gray-900 to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-gray-900 to-transparent"></div> */}
-    </div>
-
-    
+   
     </section>
     
     </div>

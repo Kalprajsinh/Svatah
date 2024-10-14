@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaCalendarAlt, FaVideo, FaCertificate } from 'react-icons/fa'; // Importing icons from react-icons
+
+import { FaCalendarAlt } from 'react-icons/fa'; // Importing icons from react-icons
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules'; // Import from 'swiper/modules'
 import 'swiper/css';

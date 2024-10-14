@@ -1,56 +1,148 @@
-// src/components/AboutUs.jsx
-
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaArrowRight } from "react-icons/fa6";
-import TypingAnimation from "@/components/ui/typing-animation"; // Ensure this component exists
-import ShinyButton from "@/components/ui/shiny-button"; // Ensure this component exists
+import Marquee from "../components/ui/marquee";
+import { cn } from "@/lib/utils";
+
+const reviews = [
+  {
+    name: "Jack",
+    username: "@jack",
+    body: "I've never seen anything like this before. It's amazing. I love it.",
+    img: "https://avatar.vercel.sh/jack",
+  },
+  {
+    name: "Jill",
+    username: "@jill",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://avatar.vercel.sh/jill",
+  },
+  {
+    name: "John",
+    username: "@john",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/john",
+  },
+  {
+    name: "Jane",
+    username: "@jane",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jane",
+  },
+  {
+    name: "Jenny",
+    username: "@jenny",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/jenny",
+  },
+  {
+    name: "James",
+    username: "@james",
+    body: "I'm at a loss for words. This is amazing. I love it.",
+    img: "https://avatar.vercel.sh/james",
+  },
+];
+ 
+const firstRow = reviews.slice(0, reviews.length / 2);
+const secondRow = reviews.slice(reviews.length / 2);
+ 
+const ReviewCard = ({
+  img,
+  name,
+  username,
+  body,
+}: {
+  img: string;
+  name: string;
+  username: string;
+  body: string;
+}) => {
+  return (
+    <figure
+    className={cn(
+      "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+      // dark styles
+      "border-gray-50/[.1] bg-gray-900 hover:bg-gray-950",
+    )}
+    >
+      <div className="flex flex-row items-center gap-2">
+        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium text-white">
+            {name}
+          </figcaption>
+          <p className="text-xs font-medium text-gray-400">{username}</p>
+        </div>
+      </div>
+      <blockquote className="mt-2 text-sm text-gray-300">{body}</blockquote>
+    </figure>
+  );
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
 function AboutUs() {
-  const storyRef = useRef(null);
-  const teamSectionRef = useRef(null);
-  const valuesRef = useRef(null);
-  const solutionsRef = useRef(null);
-  const featureRefs = useRef([]);
+  const storyRef = useRef<HTMLDivElement | null>(null);
+  const teamSectionRef = useRef<HTMLDivElement | null>(null);
+  const valuesRef = useRef<HTMLDivElement | null>(null);
+  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const text2Refs = useRef<(HTMLDivElement | null)[]>([]);
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Animate Our Story Section
+    const teamSectionElement = teamSectionRef.current;
+    if (teamSectionElement) {
     gsap.fromTo(
-      storyRef.current,
-      { opacity: 0, y: 50 },
+      teamSectionElement.querySelectorAll(".team-member"),
+      { opacity: 0, x:-100,y:100 },
       {
         opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: storyRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    // Animate Team Section
-    gsap.fromTo(
-      teamSectionRef.current.querySelectorAll(".team-member"),
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
+        x: 0,
+        y:0,
         duration: 1,
         stagger: 0.3,
         ease: "power3.out",
         scrollTrigger: {
           trigger: teamSectionRef.current,
-          start: "top 80%",
+          start: "top 70%",
           toggleActions: "play none none reverse",
         },
       }
     );
+  }
+    gsap.fromTo(
+      textRefs.current,
+      {
+        opacity: 0,
+        x:-100,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 2,
+        ease: "power3.out",
+        stagger: 0.3,
+      }
+    );
+    text2Refs.current.forEach((text) => {
+      if (text) {
+        gsap.fromTo(
+          text,
+          { opacity: 0, x: -100 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 2,
+            stagger: 0.3,
+            scrollTrigger: {
+              trigger: text,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    });
 
     // Animate Values Section
     gsap.fromTo(
@@ -59,29 +151,11 @@ function AboutUs() {
       {
         opacity: 1,
         x: 0,
-        duration: 1.5,
+        duration: 2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: valuesRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    // Animate Solutions Section
-    gsap.fromTo(
-      solutionsRef.current.querySelectorAll(".solution-card"),
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: solutionsRef.current,
-          start: "top 80%",
+          start: "top 90%",
           toggleActions: "play none none reverse",
         },
       }
@@ -107,8 +181,8 @@ function AboutUs() {
   }, []);
 
   return (
-    <div className="w-full bg-black bg-opacity-70 relative">
-      {/* Background Video */}
+    <div className="w-full bg-black bg-opacity-40 relative">
+     
       <video
         autoPlay
         muted
@@ -118,70 +192,90 @@ function AboutUs() {
         <source src="/bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Our Story Section */}
       <section
         ref={storyRef}
         className="w-full py-20 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center"
       >
+        
+        <div className="md:w-1/2 text-white pl-0 md:pl-12">
+          <h2 className="text-4xl font-bold mb-6">Our Story</h2>
+          <p ref={el => textRefs.current[0] = el} className="text-lg mb-4">
+            Our journey began with a simple, yet profound dream shared by every human being: the dream of accessible and equitable healthcare. We started as a small initiative that has blossomed into a global movement, touching countless lives across the world.
+          </p>
+          <p ref={el => textRefs.current[1] = el} className="text-lg">
+            Driven by a relentless pursuit of innovation, our team has continually pushed the boundaries of what is possible in point-of-care diagnostics. From developing cutting-edge technologies to creating affordable diagnostic tools, our efforts have been fueled by a commitment to making healthcare accessible to everyone, everywhere.
+          </p>
+        </div>
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <img
-            src="/aboutimg.jpg"
+            src="/Aboutus1.png"
+            alt="Our Story"
+            className="rounded-lg shadow-lg w-full h-auto max-w-md object-cover"
+          />
+        </div>
+      </section>
+
+      <section
+        className="w-full py-20 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center"
+      >
+        <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
+          <img
+            src="/Aboutus2.png"
             alt="Our Story"
             className="rounded-lg shadow-lg w-full h-auto max-w-md object-cover"
           />
         </div>
         <div className="md:w-1/2 text-white pl-0 md:pl-12">
-          <h2 className="text-4xl font-bold mb-6">Our Story</h2>
-          <p className="text-lg mb-4">
+          <h2 className="text-4xl font-bold mb-6">Our Mission: Creating affordable diagnostic tools</h2>
+          <p ref={el => text2Refs.current[0] = el} className="text-lg mb-4">
             Our journey began with a simple, yet profound dream shared by every human being: the dream of accessible and equitable healthcare. We started as a small initiative that has blossomed into a global movement, touching countless lives across the world.
           </p>
-          <p className="text-lg">
+          <p ref={el => text2Refs.current[1] = el} className="text-lg">
             Driven by a relentless pursuit of innovation, our team has continually pushed the boundaries of what is possible in point-of-care diagnostics. From developing cutting-edge technologies to creating affordable diagnostic tools, our efforts have been fueled by a commitment to making healthcare accessible to everyone, everywhere.
           </p>
         </div>
       </section>
 
-      {/* Our Team Section */}
       <section
         ref={teamSectionRef}
-        className="w-full py-20 bg-gray-900 bg-opacity-80 px-6 md:px-12 lg:px-24"
+        className="bg-gray-90 0 w-full py-20 px-6 md:px-12 lg:px-24"
       >
         <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Team Member 1 */}
-          <div className="team-member bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-            <img
+          <div className="team-member bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+            {/* <img
               src="/team-member1.jpg"
-              alt="Dr. John Doe"
+              
               className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
-            />
-            <h3 className="text-xl font-semibold text-white">Dr. John Doe</h3>
-            <p className="text-gray-400">Chief Medical Officer</p>
+            /> */}
+            <h3 className="text-xl font-semibold text-white"></h3>
+            <p className="text-gray-400"></p>
           </div>
           {/* Team Member 2 */}
-          <div className="team-member bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-            <img
+          <div className="team-member bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+            {/* <img
               src="/team-member2.jpg"
-              alt="Jane Smith"
+              
               className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
-            />
-            <h3 className="text-xl font-semibold text-white">Jane Smith</h3>
-            <p className="text-gray-400">Chief Technology Officer</p>
+            /> */}
+            <div className="h-32"></div>
+            <h3 className="text-xl font-semibold text-white"></h3>
+            <p className="text-gray-400"></p>
           </div>
           {/* Team Member 3 */}
-          <div className="team-member bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-            <img
+          <div className="team-member bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+            {/* <img
               src="/team-member3.jpg"
-              alt="Alice Brown"
+              
               className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
-            />
-            <h3 className="text-xl font-semibold text-white">Alice Brown</h3>
-            <p className="text-gray-400">Chief Operations Officer</p>
+            /> */}
+            <h3 className="text-xl font-semibold text-white"></h3>
+            <p className="text-gray-400"></p>
           </div>
         </div>
       </section>
 
-      {/* Our Values Section */}
       <section
         ref={valuesRef}
         className="w-full py-20 px-6 md:px-12 lg:px-24 flex justify-center items-center"
@@ -202,55 +296,27 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Explore Our Innovative Solutions Section */}
-      <section
-        ref={solutionsRef}
-        className="w-full py-20 bg-gray-900 bg-opacity-80 px-6 md:px-12 lg:px-24"
-      >
-        <h2 className="text-4xl font-bold text-white mb-12 text-center">
-          Explore Our Innovative Solutions
-        </h2>
-        <div className="flex justify-center">
-          <a href="/Services">
-            <ShinyButton className="px-6 py-3 bg-gradient-to-tr from-blue-500 to-indigo-600 text-white hover:from-blue-600 hover:to-indigo-700 rounded-full shadow-lg flex items-center">
-              <span className="mr-2">View Services</span>
-              <FaArrowRight />
-            </ShinyButton>
-          </a>
-        </div>
-      </section>
+      
 
-      {/* Features Section */}
       <section
-        ref={featureRefs}
-        className="w-full py-20 px-6 md:px-12 lg:px-24 bg-gray-800"
+        className="bg-gray-90 0 w-full py-20"
       >
-        <h2 className="text-4xl font-bold text-white mb-16 text-center">
-          Our Innovative Features
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Feature 1 */}
-          <div className="solution-card bg-gray-700 p-6 rounded-lg shadow-lg text-center">
-            <h3 className="text-2xl font-semibold text-white mb-4">Vertical Flow Immunoassay (VFI)</h3>
-            <p className="text-gray-300">
-              VFI technology offers cost-effective diagnostic solutions by utilizing inexpensive materials and streamlined manufacturing processes. Designed to be user-friendly, VFI tests require minimal training for healthcare professionals or even self-testing by patients at home, providing rapid results within minutes.
-            </p>
-          </div>
-          {/* Feature 2 */}
-          <div className="solution-card bg-gray-700 p-6 rounded-lg shadow-lg text-center">
-            <h3 className="text-2xl font-semibold text-white mb-4">Advanced Biosensors</h3>
-            <p className="text-gray-300">
-              Our advanced biosensors are engineered to detect a wide range of biomarkers with high sensitivity and specificity, ensuring accurate diagnostics even in challenging environments.
-            </p>
-          </div>
-          {/* Feature 3 */}
-          <div className="solution-card bg-gray-700 p-6 rounded-lg shadow-lg text-center">
-            <h3 className="text-2xl font-semibold text-white mb-4">User-Friendly Interfaces</h3>
-            <p className="text-gray-300">
-              Our diagnostic devices come with intuitive interfaces, making them easy to use for healthcare professionals and patients alike, regardless of technical expertise.
-            </p>
-          </div>
-        </div>
+        <h2 className="text-4xl font-bold text-white mb-12 text-center">What Our Customers Say</h2>
+        <p className="text-xl font-bold text-white mb-12 text-center">See how Svatah customers are use product and getting incredible results.</p>
+        <div className="flex w-full flex-col items-center justify-center overflow-hidden">
+      <Marquee pauseOnHover className="[--duration:20s]">
+        {firstRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
+        {secondRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
+      {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-gray-900 to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-gray-900 to-transparent"></div> */}
+    </div>
       </section>
     </div>
   );
