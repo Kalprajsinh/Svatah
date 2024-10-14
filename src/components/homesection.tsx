@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Homesection() {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-8 justify-center items-center">
