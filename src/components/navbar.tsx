@@ -4,17 +4,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function Navbar() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate(); // Using useNavigate hook for navigation
+  const navigate = useNavigate(); 
   const location = useLocation();
 
   const handleToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Function to handle navigation
+
   const handleNavigation = (path:any) => {
     navigate(path);
-    setIsMenuOpen(false); // Close the menu after navigation
+    setIsMenuOpen(false); 
   };
 
   return (

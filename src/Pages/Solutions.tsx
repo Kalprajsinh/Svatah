@@ -1,6 +1,4 @@
 import ShinyButton from '@/components/ui/shiny-button'
-import React from 'react'
-import { FaArrowRight } from 'react-icons/fa6'
 
 function Solutions() {
   return (
@@ -66,16 +64,3 @@ function Solutions() {
 }
 
 export default Solutions
-
-{/* <div className="w-full bg-black bg-opacity-40 relative">
-     
-     <video
-       autoPlay
-       muted
-       loop
-       className="fixed top-0 left-0 w-full h-full object-cover -z-20"
-     >
-       <source src="/bg.mp4" type="video/mp4" />
-     </video>
-     
-</div> */}

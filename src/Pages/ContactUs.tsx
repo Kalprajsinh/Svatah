@@ -4,7 +4,7 @@ import { FaPhone } from "react-icons/fa6";
 function ContactUs() {
   return (
     <div className="w-full bg-black bg-opacity-40 relative">
-      {/* Background video */}
+     
       <video
         autoPlay
         muted
@@ -14,9 +14,9 @@ function ContactUs() {
         <source src="/bg.mp4" type="video/mp4" />
       </video>
 
-      {/* Main Content */}
+    
       <div className="flex flex-col md:flex-row p-16 text-white relative z-10">
-        {/* Left Section */}
+
         <div className="w-full h-auto md:w-1/2 mt-8 md:mt-0 flex justify-start items-start">
           <div>
             <h1 className="text-4xl font-bold mb-4">Let's Get In Touch</h1>
@@ -36,7 +36,7 @@ function ContactUs() {
           </div>
         </div>
 
-        {/* Right Section: Contact Form */}
+      
         <div className="w-full md:w-1/2 pr-0 md:pr-8 mt-8 md:mt-0">
           <form className="pl-8 rounded-lg">
             <div className="mb-4">

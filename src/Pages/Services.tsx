@@ -15,13 +15,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 function Services() {
-  // Refs for section titles and service cards
+
   const sectionTitleRef = useRef<HTMLDivElement | null>(null);
   const serviceRefs =  useRef<(HTMLDivElement | null)[]>([]);
   const keyBenefitsRefs =  useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Animate Section Titles
+
     gsap.fromTo(sectionTitleRef.current, 
       {
         opacity: 0,
@@ -39,7 +39,7 @@ function Services() {
       },
     });
 
-    // Animate Service Cards
+
     serviceRefs.current.forEach((card, index) => {
       const isLastCard = index === serviceRefs.current.length - 1;
       gsap.fromTo(card,
@@ -61,7 +61,7 @@ function Services() {
       });
     });
 
-    // Animate Key Benefits Titles
+
     gsap.fromTo("#certification",
       {
         opacity: 0,
@@ -99,14 +99,14 @@ function Services() {
 
   }, []);
 
-  // Helper function to add refs to serviceRefs
+
   const addToServiceRefs = (el:any) => {
     if (el && !serviceRefs.current.includes(el)) {
       serviceRefs.current.push(el);
     }
   };
 
-  // Helper function to add refs to keyBenefitsRefs
+
   const addToKeyBenefitsRefs = (el:any) => {
     if (el && !keyBenefitsRefs.current.includes(el)) {
       keyBenefitsRefs.current.push(el);
@@ -289,7 +289,7 @@ function Services() {
         className="py-16 bg-black bg-opacity-50"
       >
         <div className="max-w-screen-xl mx-auto px-6">
-          {/* Section Header */}
+         
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
               CERTIFICATE COURSES & INTERNSHIP
@@ -299,9 +299,9 @@ function Services() {
             </p>
           </div>
 
-          {/* Two Columns */}
+       
           <div id="certification" className="flex flex-col lg:flex-row gap-8">
-            {/* Left Column - Topics List */}
+
             <div
             
               className="w-full lg:w-1/2 bg-white bg-opacity-15 p-6 rounded-lg"
@@ -318,12 +318,12 @@ function Services() {
               </ul>
             </div>
 
-            {/* Right Column - Courses & Internship Details */}
+            
             <div
             
               className="w-full lg:w-1/2 bg-white bg-opacity-15 p-6 rounded-lg flex flex-col space-y-6 justify-center"
             >
-              {/* Short-Term Professional Courses */}
+        
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-2 text-center">
                   SHORT-TERM PROFESSIONAL COURSES
@@ -334,7 +334,7 @@ function Services() {
                   <p className='text-center text-white text-lg'>6 Months</p>
               </div>
 
-              {/* Short-Term Internship */}
+          
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-2 text-center">
                   SHORT-TERM INTERNSHIP

@@ -144,7 +144,7 @@ function AboutUs() {
       }
     });
 
-    // Animate Values Section
+   
     gsap.fromTo(
       valuesRef.current,
       { opacity: 0, x: -100 },
@@ -161,7 +161,7 @@ function AboutUs() {
       }
     );
 
-    // Animate Features Section
+   
     gsap.fromTo(
       featureRefs.current,
       { opacity: 0, y: 50 },
@@ -242,7 +242,7 @@ function AboutUs() {
       >
         <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Team Member 1 */}
+
           <div className="team-member bg-gray-700 p-6 rounded-lg shadow-lg text-center">
             {/* <img
               src="/team-member1.jpg"
@@ -252,7 +252,7 @@ function AboutUs() {
             <h3 className="text-xl font-semibold text-white"></h3>
             <p className="text-gray-400"></p>
           </div>
-          {/* Team Member 2 */}
+
           <div className="team-member bg-gray-700 p-6 rounded-lg shadow-lg text-center">
             {/* <img
               src="/team-member2.jpg"
@@ -263,7 +263,7 @@ function AboutUs() {
             <h3 className="text-xl font-semibold text-white"></h3>
             <p className="text-gray-400"></p>
           </div>
-          {/* Team Member 3 */}
+  
           <div className="team-member bg-gray-700 p-6 rounded-lg shadow-lg text-center">
             {/* <img
               src="/team-member3.jpg"
@@ -323,104 +323,3 @@ function AboutUs() {
 }
 
 export default AboutUs;
-
-
-// function AboutUs() {
-//   return (
-//     <div className="w-full bg-black bg-opacity-70">
-//       <video
-//         autoPlay
-//         muted
-//         loop
-//         className="fixed top-0 left-0 w-full h-full object-cover -z-20"
-//       >
-//         <source src="/bg.mp4" type="video/mp4" />
-//       </video>
-//   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
-
-//     <div className="pl-9 flex justify-center items-center">
-//       <div>
-//       <h2 className="text-4xl font-bold text-white mb-4">Our Story</h2>
-//       <br /><br />
-//       <p className="text-lg text-white mb-4">
-//         Our journey began with a simple, yet profound dream shared by every human being: the dream of accessible and equitable healthcare. We are starting as a small initiative that can blossom into a global movement, touching countless lives across the world.
-//       </p>
-//       <p className="text-lg text-white">
-//         Driven by a relentless pursuit of innovation, our team has continually pushed the boundaries of what is possible in point-of-care diagnostics. From developing cutting-edge technologies to creating affordable diagnostic tools, our efforts have been fueled by a commitment to making healthcare accessible to everyone, everywhere.
-//       </p>
-//       </div>
-//     </div>
-
-//     <div className="flex justify-center">
-//       <img src="aboutimg.jpg" alt="Our Story" className="rounded-lg shadow-lg w-auto h-96 object-fill" />
-//     </div>
-//   </div>
-
-//   <section className="mt-5 h-72">
-//         <div className="max-w-screen-xl mx-auto px-4">
-//           <h2 className="text-4xl font-bold text-white mb-4 text-center">Our Team</h2>
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-  
-//             {/* <div className="bg-gray-200 p-6 rounded-lg shadow-md">
-//               <img src="team-member1.jpg" alt="Team Member 1" className="w-32 h-32 mx-auto rounded-full mb-4" />
-//               <h3 className="text-xl font-semibold">Dr. John Doe</h3>
-//               <p className="text-sm text-gray-600">Chief Medical Officer</p>
-//             </div>
-    
-//             <div className="bg-gray-200 p-6 rounded-lg shadow-md">
-//               <img src="team-member2.jpg" alt="Team Member 2" className="w-32 h-32 mx-auto rounded-full mb-4" />
-//               <h3 className="text-xl font-semibold">Jane Smith</h3>
-//               <p className="text-sm text-gray-600">Chief Technology Officer</p>
-//             </div>
-    
-//             <div className="bg-gray-200 p-6 rounded-lg shadow-md">
-//               <img src="team-member3.jpg" alt="Team Member 3" className="w-32 h-32 mx-auto rounded-full mb-4" />
-//               <h3 className="text-xl font-semibold">Alice Brown</h3>
-//               <p className="text-sm text-gray-600">Chief Operations Officer</p>
-//             </div> */}
-//           </div>
-//         </div>
-//       </section>
-
-//     <div className=" mt-5 p-6">
-
-//     <div className="pl-9 flex justify-center items-center">
-//       <div>
-//       <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
-//       <br />
-//       <ul className="text-lg text-white leading-7 space-y-4">
-//           <li>
-//             <strong>Innovation:</strong> We innovate continuously to provide cost-effective and rapid point-of-care solutions.
-//           </li>
-//           <li>
-//             <strong>Reach:</strong> We aim to expand our reach to the most vulnerable and hard-to-reach populations.
-//           </li>
-//           <li>
-//             <strong>Partnership:</strong> We foster partnerships and create ecosystems that enhance our ability to respond swiftly and effectively to emerging health threats.
-//           </li>
-//         </ul>
-//       </div>
-//     </div>
-//   </div>
-
-//   <section className=" mt-5">
-//         <div className="max-w-screen-xl mx-auto px-4">
-//           <h2 className="text-4xl font-bold text-white mb-4 text-center">Explore Our Innovative Solutions</h2>
-//           <div className='w-full'>
-//             <div className='flex justify-center items-center'>
-//             <a href="/Services">
-//             <button className="mt-4 px-6 py-3 bg-gray-800 text-white hover:bg-gray-950 rounded-full">
-//             View services
-//             </button>
-//             </a>
-//             </div>
-//           </div>
-          
-//         </div>
-//       </section>
-
-// </div>
-//   );
-// }
-
-// export default AboutUs;

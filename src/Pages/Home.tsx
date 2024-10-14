@@ -43,7 +43,7 @@ function Home() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: text3Ref.current,
-          start: 'top 100%', // When the top of the element hits 80% of the viewport height
+          start: 'top 100%', 
           toggleActions: 'play none none reverse',
         },
       }
@@ -55,8 +55,8 @@ function Home() {
       {
         opacity: 1,
         y: 0,
-        duration: 1, // Adjust duration for each element
-        stagger: 0.7, // Stagger time in seconds
+        duration: 1, 
+        stagger: 0.7, 
         scrollTrigger: {
           trigger: [div1ref.current, div2ref.current, div3ref.current,div4ref.current],
           start: 'top 90%', 
@@ -72,7 +72,6 @@ function Home() {
     sections.forEach((section) => {
       const text = section.querySelector('.feature-text');
 
-      // Text Animation
       gsap.fromTo(
         text,
         { opacity: 0, x: -100 },
@@ -178,12 +177,12 @@ function Home() {
       >
         <h2 className="text-4xl font-bold text-white mb-12 text-center">Svatah By the Numbers</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Team Member 1 */}
+          
           <div className="team-member rounded-lg shadow-lg text-center">
             <h3 className="text-5xl font-semibold text-white"><NumberTicker className="text-5xl font-semibold text-white" value={5} /></h3>
             <p className="text-gray-400">Year Experience</p>
           </div>
-          {/* Team Member 2 */}
+       
           <div className="team-member rounded-lg shadow-lg text-center">
             <h3 className="text-5xl font-semibold text-white"><NumberTicker className="text-5xl font-semibold text-white" value={23} /></h3>
             <p className="text-gray-400">Projects completed</p>
@@ -206,9 +205,9 @@ function Home() {
               Our Innovative Features
             </h2>
             <div className="relative">
-              {/* Text Sections */}
+       
               <div className="space-y-16">
-                {/* Feature 1 */}
+              
                 <div className="feature-section flex flex-col md:flex-row items-center justify-center">
                   <div className="md:w-1/3 feature-text text-white text-center">
                     <h3 className="text-2xl font-semibold mb-4">Advanced Diagnostics</h3>
@@ -220,7 +219,6 @@ function Home() {
                   <div className="md:w-1/2"></div> {/* Placeholder for alignment */}
                 </div>
 
-                {/* Feature 2 */}
                 <div className="feature-section flex flex-col md:flex-row items-center justify-center">
                   <div className="md:w-1/3 feature-text text-white order-2 md:order-1 text-center">
                     <h3 className="text-2xl font-semibold mb-4">User-Friendly Interface</h3>
@@ -232,7 +230,6 @@ function Home() {
                   <div className="md:w-1/2"></div>
                 </div>
 
-                {/* Feature 3 */}
                 <div className="feature-section flex-col md:flex-row items-center flex justify-center">
                   <div className="md:w-1/3 feature-text text-white text-center">
                     <h3 className="text-2xl font-semibold mb-4">Scalable Solutions</h3>
@@ -244,7 +241,6 @@ function Home() {
                   <div className="md:w-1/2"></div>
                 </div>
 
-                {/* Add more feature sections as needed */}
               </div>
             </div>
           </div>

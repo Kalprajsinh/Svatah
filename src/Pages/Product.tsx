@@ -3,13 +3,13 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 function Product() {
-  // Refs for animations
+ 
   const headerRef = useRef<HTMLDivElement | null>(null);
   const productRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Function to add refs to productRefs array
+  
   const addToProductRefs = (el:any) => {
     if (el && !productRefs.current.includes(el)) {
       productRefs.current.push(el);
@@ -17,7 +17,7 @@ function Product() {
   };
 
   useEffect(() => {
-    // Animate Section Header
+   
     gsap.fromTo(headerRef.current, {
       opacity: 0,
       y: 50,
@@ -34,8 +34,8 @@ function Product() {
       },
     });
 
-    // Animate Each Product List Item
-    productRefs.current.forEach((item, index) => {
+   
+    productRefs.current.forEach((item) => {
       gsap.fromTo(item, {
         opacity: 0,
         y: 50,
@@ -45,7 +45,7 @@ function Product() {
       y: 0,
         duration: 0.8,
         ease: 'power3.out',
-        delay: 0.2, // Staggered delay for cascading effect
+        delay: 0.2, 
         scrollTrigger: {
           trigger: item,
           start: 'top 80%',
@@ -57,7 +57,7 @@ function Product() {
 
   return (
     <div className="w-full bg-black bg-opacity-40 relative">
-      {/* Background Video */}
+      
       <video
         autoPlay
         muted
@@ -67,7 +67,7 @@ function Product() {
         <source src="/bg.mp4" type="video/mp4" />
       </video>
   
-      {/* Header Section */}
+     
       <section className="py-12">
         <div className="max-w-screen-xl mx-auto px-4 text-center">
           <h2
@@ -80,8 +80,7 @@ function Product() {
           </p>
         </div>
       </section>
-  
-      {/* Products Section */}
+
       <section className="py-12">
         <div className="max-w-screen-xl mx-auto px-6">
           <ul className="space-y-6">
