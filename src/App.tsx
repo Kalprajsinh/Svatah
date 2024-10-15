@@ -17,7 +17,7 @@ const DelayedHome = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 2000);
 
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
@@ -25,7 +25,6 @@ const DelayedHome = () => {
   return loading ? <div className="overflow-hidden">
   <div className="w-screen h-screen flex justify-center items-center font-bold text-lg bg-black text-white">Loading...
   </div> 
-  <Home />
   </div>
   : 
   

@@ -95,14 +95,15 @@ function Home() {
   return (
     <>
     <div className="w-full">
-      <video
+      {/* <video
         autoPlay
         muted
         loop
         className="fixed top-0 left-0 w-full h-full object-cover -z-20"
       >
         <source src="/bg2.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      <img src="bgg.png" className="fixed top-0 left-0 w-full h-full object-cover -z-20" alt="" />
 <section className="w-full md:h-[305vh] h-[390vh] relative overflow-hidden bg-black bg-opacity-70">
       <div className="relative z-10 flex flex-col items-center h-screen justify-center">
         <h1 id='text1' className="text-white text-center text-4xl md:text-6xl font-bold">
