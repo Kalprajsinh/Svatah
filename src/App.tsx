@@ -22,7 +22,12 @@ const DelayedHome = () => {
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
 
-  return loading ? <div className="w-screen h-screen flex justify-center items-center font-bold text-lg bg-black text-white">Loading...</div> : 
+  return loading ? <div className="overflow-hidden">
+  <div className="w-screen h-screen flex justify-center items-center font-bold text-lg bg-black text-white">Loading...
+  </div> 
+  <Home />
+  </div>
+  : 
   
   <>
   <BrowserRouter>
