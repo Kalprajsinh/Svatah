@@ -115,7 +115,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/Workshops")}
+                  // onClick={() => handleNavigation("/Workshops")}
                   className={`block py-2 px-3 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 ${
                     location.pathname === "/Workshops" ? "text-blue-500" : "text-white"
                   }`}
@@ -125,7 +125,7 @@ function Navbar() {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/News")}
+                  // onClick={() => handleNavigation("/News")}
                   className={`block py-2 px-3 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 ${
                     location.pathname === "/News" ? "text-blue-500" : "text-white"
                   }`}

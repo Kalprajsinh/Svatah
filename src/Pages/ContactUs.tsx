@@ -5,14 +5,17 @@ function ContactUs() {
   return (
     <div className="w-full bg-black bg-opacity-40 relative">
      
-      <video
+      {/* <video
         autoPlay
         muted
         loop
         className="fixed top-0 left-0 w-full h-full object-cover -z-20"
       >
         <source src="/bg.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      <div className="fixed top-0 left-0 w-full h-full object-cover -z-20 bg-gradient-to-br from-gray-800 to-sky-800">
+
+</div>
 
     
       <div className="flex flex-col md:flex-row p-16 text-white relative z-10">

@@ -183,14 +183,9 @@ function AboutUs() {
   return (
     <div className="w-full bg-black bg-opacity-40 relative">
      
-      <video
-        autoPlay
-        muted
-        loop
-        className="fixed top-0 left-0 w-full h-full object-cover -z-20"
-      >
-        <source src="/bg.mp4" type="video/mp4" />
-      </video>
+      <div className="fixed top-0 left-0 w-full h-full object-cover -z-20 bg-gradient-to-br from-gray-800 to-sky-800">
+
+      </div>
 
       <section
         ref={storyRef}
@@ -210,7 +205,7 @@ function AboutUs() {
           <img
             src="/Aboutus1.png"
             alt="Our Story"
-            className="rounded-lg shadow-lg w-full h-auto max-w-md object-cover"
+            className="rounded-lg w-full h-auto max-w-md object-cover"
           />
         </div>
       </section>
@@ -222,7 +217,7 @@ function AboutUs() {
           <img
             src="/Aboutus2.png"
             alt="Our Story"
-            className="rounded-lg shadow-lg w-full h-auto max-w-md object-cover hidden md:block"
+            className="rounded-lg w-full h-auto max-w-md object-cover hidden md:block"
           />
         </div>
         <div className="md:w-1/2 text-white pl-0 md:pl-12">

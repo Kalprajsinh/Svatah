@@ -58,14 +58,17 @@ function Product() {
   return (
     <div className="w-full bg-black bg-opacity-40 relative">
       
-      <video
+      {/* <video
         autoPlay
         muted
         loop
         className="fixed top-0 left-0 w-full h-full object-cover -z-20"
       >
         <source src="/bg.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      <div className="fixed top-0 left-0 w-full h-full object-cover -z-20 bg-gradient-to-br from-gray-800 to-sky-800">
+
+</div>
   
      
       <section className="py-12">
@@ -135,8 +138,8 @@ function Product() {
             <p className="text-gray-300 mb-4">Basics and demos led by Dr. Amit Asthana. Includes certificate and kit for UG/PG/PhD, faculty, and industry professionals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem illum blanditiis, tenetur laborum aspernatur et doloremque quis debitis quasi vero aperiam consectetur similique nisi a, corporis placeat, nesciunt voluptas beatae odit quod fugit. Asperiores quaerat veniam laudantium eius, fugiat voluptate.</p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 h-1/2 md:h-64 flex justify-center items-center mt-6 md:mt-0">
-        <img src="solution1.png" alt="Vertical Flow Immunoassay" className="w-auto h-64 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300" />
+        <div className="w-full md:w-1/2 h-1/2 justify-center items-center md:hidden block">
+        <img src="solution1.png" alt="Vertical Flow Immunoassay" className="md:hidden block w-auto h-64 object-cover rounded-lg mb-4 hover:scale-105 transition-transform duration-300" />
         </div>
       </li>
 

@@ -4,14 +4,17 @@ function Solutions() {
   return (
     <div className="w-full bg-black bg-opacity-40 relative">
      
-      <video
+      {/* <video
         autoPlay
         muted
         loop
         className="fixed top-0 left-0 w-full h-full object-cover -z-20"
       >
         <source src="/bg.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      <div className="fixed top-0 left-0 w-full h-full object-cover -z-20 bg-gradient-to-br from-gray-800 to-sky-800">
+
+</div>
       <section className="">
         <div className="max-w-screen-xl mx-auto py-20">
           <h2 className="text-4xl font-bold mb-4 text-center text-white">Discover Your Solutions</h2>
@@ -28,7 +31,7 @@ function Solutions() {
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
   
-            <div className="bg-gray-800 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg w-full">
+            <div className="bg-gray-700 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg w-full">
               <img src="solution1.png" className="opacity-90 w-auto h-80 mx-auto rounded-lg mb-4 hover:scale-105 transition-transform duration-300" />
               <h3 className="text-xl font-semibold text-white">Vertical Flow Immunoassay (VFI)</h3>
               <br />
@@ -38,7 +41,7 @@ function Solutions() {
               </a>
             </div>
     
-            <div className="bg-gray-800 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg w-full">
+            <div className="bg-gray-700 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg w-full">
               <img src="solution2.png" className="opacity-90 w-auto h-80 mx-auto rounded-lg mb-4 hover:scale-105 transition-transform duration-300" />
               <h3 className="text-xl font-semibold text-white">Lateral Flow Immunoassay (LFI)</h3>
               <br />
@@ -48,7 +51,7 @@ function Solutions() {
               </a>
             </div>
     
-            <div className="bg-gray-800 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg w-full">
+            <div className="bg-gray-700 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg w-full">
               <img src="solution3.jpg" className="opacity-90 w-auto h-80 mx-auto rounded-lg mb-4 hover:scale-105 transition-transform duration-300" />
               <h3 className="text-xl font-semibold text-white">Electro-chemical Biosensor Technology (EBT)</h3>
               <a href="/Solutions">
